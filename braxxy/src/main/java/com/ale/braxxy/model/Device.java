@@ -13,6 +13,14 @@ import jakarta.persistence.Lob;
 @Entity
 public class Device {
 
+    public Device(UUID id, String name, DeviceStatus status, LocalDateTime lastPing, String location) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+        this.lastPing = lastPing;
+        this.location = location;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
