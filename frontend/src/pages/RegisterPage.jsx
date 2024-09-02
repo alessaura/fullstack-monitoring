@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { registerUser } from '../services/apiService';
-import './Register.css';
+import { registerUser } from '../services/userService';
+import './RegisterPage.css';
 
 
 const Register = () => {

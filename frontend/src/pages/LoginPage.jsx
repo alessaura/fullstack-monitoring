@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { loginUser } from '../services/apiService';
+import { loginUser } from '../services/userService';
+import { Link } from 'react-router-dom';
+import './LoginPage.css'
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -31,6 +33,10 @@ const Login = () => {
         </label>
         <br />
         <button type="submit">Login</button>
+        <p>Não tem uma conta?</p>
+      <Link to="/register">
+        <button>Cadastrar</button>
+      </Link>
       </form>
       <p>{message}</p>
     </div>

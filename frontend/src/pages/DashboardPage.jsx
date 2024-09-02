@@ -2,8 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import DeviceForm from '../components/DeviceForm'; // Importe o DeviceForm
-import './Dashboard.css'; // Importando o CSS
+import AlertsConfig from '../components/Dashboard/AlertsConfig'; 
+import Header from '../components/Layout/Header';
+import DeviceForm from '../components/Dashboard/DeviceForm';
 
 const Dashboard = () => {
   const [devices, setDevices] = useState([]);
@@ -53,15 +54,17 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      <h1>Device Dashboard BRAXXY</h1>
-      <button className="btn btn-primary btn-custom" onClick={handleCreate}>Create New Device</button>
+      <Header /> 
+      <AlertsConfig /> 
+      <h1> Cadastro de dispositivos Braxxy </h1>
+      <button className="btn btn-primary btn-custom" onClick={handleCreate}>Cadastrar novo</button>
       {showForm && (
         <DeviceForm 
           deviceId={editDeviceId} 
-          onClose={() => setShowForm(false)} // Função para fechar o formulário
+          onClose={() => setShowForm(false)} 
           onSave={() => {
             setShowForm(false);
-            // Recarregar a lista de dispositivos após criação ou edição
+
             const fetchDevices = async () => {
               try {
                 const response = await axios.get('/api/devices');

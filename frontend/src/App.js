@@ -1,18 +1,21 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Dashboard from './pages/Dashboard';
-import DeviceDetails from './pages/DeviceDetails';
-import Login from './pages/Login';
-import Register from './pages/Register';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import DashboardPage from './pages/DashboardPage'; 
+import './App.css';
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/device-details/:id" element={<DeviceDetails />} />
-    </Routes>
+    <div className="app">
+      <div className="app-content">
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} /> 
+            <Route path="/dashboard" element={<DashboardPage />} /> 
+          </Routes>
+        </div>
+    </div>
   );
 };
 

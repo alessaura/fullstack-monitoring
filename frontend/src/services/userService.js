@@ -1,10 +1,11 @@
+// src/services/userService.js
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080/api/users';
+const USER_API_BASE_URL = 'http://localhost:8080/api/users';
 
 export const registerUser = async (email, password) => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/register`, {
+    const response = await axios.post(`${USER_API_BASE_URL}/register`, {
       email,
       passwordHash: password
     });
@@ -18,7 +19,7 @@ export const registerUser = async (email, password) => {
 
 export const loginUser = async (email, password) => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/login`, {
+    const response = await axios.post(`${USER_API_BASE_URL}/login`, {
       email,
       passwordHash: password
     });

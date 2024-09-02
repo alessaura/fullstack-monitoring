@@ -1,0 +1,39 @@
+/* Estilo para o header */
+header {
+    background-color: #282c34;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para o título */
+  header h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  /* Estilo para o nav */
+  header nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  /* Estilo para os links de navegação */
+  header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Efeito de hover nos links */
+  header nav a:hover {
+    background-color: #61dafb;
+    color: #282c34;
+  }
+  

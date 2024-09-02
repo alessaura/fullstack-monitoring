@@ -1,0 +1,74 @@
+
+.alerts-config {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 100%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+
+  .alerts-config h2 {
+    font-size: 22px;
+    margin-right: 20px;
+    color: #333;
+  }
+ 
+  .alerts-config form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+ 
+  .alerts-config form div {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  .alerts-config label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+  }
+  
+
+  .alerts-config input[type="number"],
+  .alerts-config input[type="checkbox"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 120px;
+  }
+  
+  
+  .alerts-config input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+  }
+  
+
+  .alerts-config button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+
+  .alerts-config button:hover {
+    background-color: #218838;
+  }
+  
