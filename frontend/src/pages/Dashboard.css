@@ -1,64 +1,70 @@
 /* src/pages/Dashboard.css */
+
+/* Container principal do Dashboard */
 .dashboard-container {
-    padding: 20px;
-    background-color: #f4f4f4;
-    min-height: 100vh;
-  }
-  
-  .dashboard-container h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .dashboard-container button {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .dashboard-container button:hover {
-    background-color: #0056b3;
-  }
-  
-  .dashboard-container ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .dashboard-container li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    margin: 5px 0;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .dashboard-container li a {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  .dashboard-container li a:hover {
-    text-decoration: underline;
-  }
-  
-  .dashboard-container li button {
-    background-color: #dc3545;
-    border: none;
-  }
-  
-  .dashboard-container li button:hover {
-    background-color: #c82333;
-  }
-  
+  padding: 20px;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+/* Estilo do título principal */
+.dashboard-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilo dos botões principais */
+.dashboard-container .btn-custom {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+}
+
+.dashboard-container .btn-custom:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo da lista de dispositivos */
+.dashboard-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Estilo de cada item da lista */
+.dashboard-container li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Estilo do link de cada item da lista */
+.dashboard-container li a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.dashboard-container li a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo dos botões dentro da lista */
+.dashboard-container li .btn-delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.dashboard-container li .btn-delete:hover {
+  background-color: #c82333;
+}

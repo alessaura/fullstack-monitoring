@@ -1,33 +1,29 @@
 package com.ale.braxxy.model;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-import org.apache.commons.logging.Log;
-import ch.qos.logback.core.status.Status;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
 @Entity
 public class Device {
 
-    public Device(UUID id, DeviceStatus status, LocalDateTime lastPing, String location) {
-        this.id = id;
-        this.status = status;
-        this.lastPing = lastPing;
-        this.location = location;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+
+    private String name;
 
     @Enumerated(EnumType.STRING)
     private DeviceStatus status;
@@ -36,8 +32,12 @@ public class Device {
 
     private String location;
 
-    @Lob
-    private String logs;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @OneToMany(mappedBy = "device", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Log> logs;
 
     // Getters e Setters
     public UUID getId() {
@@ -46,6 +46,14 @@ public class Device {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public DeviceStatus getStatus() {
@@ -72,11 +80,19 @@ public class Device {
         this.location = location;
     }
 
-    public String getLogs() {
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<Log> getLogs() {
         return logs;
     }
 
-    public void setLogs(String logs) {
+    public void setLogs(List<Log> logs) {
         this.logs = logs;
     }
 }
